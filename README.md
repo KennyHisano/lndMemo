@@ -85,7 +85,7 @@ alice$ lncli-alice connect <BOB_PUBKEY>@localhost:10012
 
 ```
 
-# a2
+### a2
 
 first, keet track of the method of fetching Bob's pubKey
 
