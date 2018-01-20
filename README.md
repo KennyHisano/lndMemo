@@ -1,10 +1,13 @@
-README.md
+### intension of this read is to keep track of coding structure of lightning network based on the local setup tutporial post below/
+
 
 through lnd tutorial.
 http://dev.lightning.community/tutorial/01-lncli/index.html
 
+it works with testnet from btcd.
 <testnet>
 mining fund (btcd) -> alice -> bob -> charlie
+
 
 # q1 
 how alice creares paymentchannel to bob
@@ -43,5 +46,6 @@ alice$ lncli-alice connect <BOB_PUBKEY>@localhost:10012
 
 # a
 
+first, keet track of the method of fetching Bob's pubKey
 
 lnrpc rpc.pb.go
