@@ -1,4 +1,4 @@
-### intension of this read is to keep track of coding structure of lightning network based on the local setup tutorial post below.
+## intension of this read is to keep track of coding structure of lightning network based on the local setup tutorial post below.
 
 
 through lnd tutorial.
@@ -8,8 +8,50 @@ it works with testnet from btcd.
 <testnet>
 mining fund (btcd) -> alice -> bob -> charlie
 
+###Note: required knowledge:
+protobuf rpc with go
+https://github.com/minaandrawos/Go-Protobuf-Examples.git
+this project gives bootstrap in case if you are not familiar with it
 
-# q1 how alice creares paymentchannel to bob
+
+
+
+# q1 how generation of address works
+
+
+
+first run client and d 
+
+
+```
+alice$ lnd --rpcport=10001 --peerport=10011 --restport=8001
+```
+
+go to lnd.go func main: 443
+lndMain() -> loadConfig() -> config.go
+starts program and read ports
+
+
+```
+alice$ lncli --rpcserver=localhost:10001 --no-macaroons create
+```
+
+go to commands.go: func create 732
+
+func create -> main.go:41 getWalletUnlockerClient() -> getClientconn() ->(json) \rpc.swagger.json 181
+
+
+
+
+
+
+
+
+
+
+
+
+# q2 how alice creares paymentchannel to bob
 
 -"Creating the P2P Network
 Now that Alice and Charlie have some simnet Bitcoin, let’s start connecting them together.
@@ -42,8 +84,33 @@ alice$ lncli-alice connect <BOB_PUBKEY>@localhost:10012
 
 ```
 
-# a1
+# a2
 
 first, keet track of the method of fetching Bob's pubKey
 
-lnrpc rpc.pb.go
+lncli-bob getinfo(lncli-bob is alias of lncli)
+
+1. go to lnclid/commands.go 
+
+
+
+from lnrpc/rpc.proto
+data serialization is done by google protobuf
+
+```
+  /** lncli: `getinfo`
+    GetInfo returns general information concerning the lightning node including
+    it's identity pubkey, alias, the chains it is connected to, and information
+    concerning the number of open+pending channels.
+    */
+    rpc GetInfo (GetInfoRequest) returns (GetInfoResponse) {
+        option (google.api.http) = {
+            get: "/v1/getinfo"
+        };
+    }
+
+
+```
+
+
+2. 
