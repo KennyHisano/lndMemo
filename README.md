@@ -1,4 +1,4 @@
-# intension of this read is to keep track of coding structure of lightning network based on the local setup tutorial post below.
+## intension of this read is to keep track of coding structure of lightning network based on the local setup tutorial post below.
 
 
 through lnd tutorial.
@@ -9,8 +9,9 @@ it works with testnet from btcd.
 mining fund (btcd) -> alice -> bob -> charlie
 
 ## Note: required knowledge:
-protobuf rpc with go
+protobuf rpc with go:
 https://github.com/minaandrawos/Go-Protobuf-Examples.git
+
 this project gives bootstrap in case if you are not familiar with it
 
 
@@ -51,7 +52,7 @@ func create -> main.go:41 getWalletUnlockerClient() -> getClientconn() ->(json) 
 
 
 
-# q2 how alice creares paymentchannel to bob
+### q2 how alice creares paymentchannel to bob
 
 -"Creating the P2P Network
 Now that Alice and Charlie have some simnet Bitcoin, let’s start connecting them together.
