@@ -1,4 +1,4 @@
-## intension of this read is to keep track of coding structure of lightning network based on the local setup tutorial post below.
+# intension of this read is to keep track of coding structure of lightning network based on the local setup tutorial post below.
 
 
 through lnd tutorial.
@@ -8,7 +8,7 @@ it works with testnet from btcd.
 <testnet>
 mining fund (btcd) -> alice -> bob -> charlie
 
-###Note: required knowledge:
+## Note: required knowledge:
 protobuf rpc with go
 https://github.com/minaandrawos/Go-Protobuf-Examples.git
 this project gives bootstrap in case if you are not familiar with it
@@ -16,7 +16,7 @@ this project gives bootstrap in case if you are not familiar with it
 
 
 
-# q1 how generation of address works
+### q1 how generation of address works
 
 
 
