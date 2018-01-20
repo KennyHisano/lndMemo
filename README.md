@@ -1,4 +1,4 @@
-### intension of this read is to keep track of coding structure of lightning network based on the local setup tutporial post below/
+### intension of this read is to keep track of coding structure of lightning network based on the local setup tutorial post below.
 
 
 through lnd tutorial.
@@ -9,9 +9,7 @@ it works with testnet from btcd.
 mining fund (btcd) -> alice -> bob -> charlie
 
 
-# q1 
-how alice creares paymentchannel to bob
-
+# q1 how alice creares paymentchannel to bob
 
 -"Creating the P2P Network
 Now that Alice and Charlie have some simnet Bitcoin, let’s start connecting them together.
@@ -44,7 +42,7 @@ alice$ lncli-alice connect <BOB_PUBKEY>@localhost:10012
 
 ```
 
-# a
+# a1
 
 first, keet track of the method of fetching Bob's pubKey
 
