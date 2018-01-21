@@ -9,7 +9,7 @@ it works with testnet from btcd.
 mining fund (btcd) -> alice -> bob -> charlie
 
 ## Note: required knowledge:
-protobuf rpc with go:
+-protobuf rpc with go:
 https://github.com/minaandrawos/Go-Protobuf-Examples.git
 
 this project gives bootstrap in case if you are not familiar with it
@@ -17,7 +17,7 @@ this project gives bootstrap in case if you are not familiar with it
 
 
 
-### q1 how generation of address works
+### Q1 how generation of address works
 
 
 
@@ -39,14 +39,17 @@ alice$ lncli --rpcserver=localhost:10001 --no-macaroons create
 
 go to commands.go: func create 732
 
-func create -> main.go:41 getWalletUnlockerClient() -> getClientconn() ->(json) \rpc.swagger.json 181
+- establish connection  
+(lncli)func create -> main.go:41 getWalletUnlockerClient() -> getClientconn() -> func Dial() conn.go 35
 
+- create wallet
+(lncli)func create -> req := &lnrpc.CreateWalletRequest -> rpc.proto 31->
+(json) \rpc.swagger.json 181 ->
 
-
-
-
-
-
+(now lnd)  (access btcd, then creates wallet there)
+(lncli) func create -> service.go: 45 func createWallet() ->
+loader:= wallet.Newloader ->
+https://github.com/Roasbeef/btcwallet/wallet/loader.go NewLoader
 
 
 
