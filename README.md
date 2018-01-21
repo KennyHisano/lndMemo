@@ -19,8 +19,7 @@ this project gives bootstrap in case if you are not familiar with it
 
 ### Q1 how generation of address works
 
-
-
+##### wallet
 first run client and d 
 
 
@@ -45,15 +44,53 @@ go to commands.go: func create 732
 - create wallet
 (lncli)func create -> req := &lnrpc.CreateWalletRequest -> rpc.proto 31->
 (json) \rpc.swagger.json 181 ->
-
 (now lnd)  (access btcd, then creates wallet there)
-(lncli) func create -> service.go: 45 func createWallet() ->
+
+(lncli) func create -> createwallet -> /walletunlocker/service.go: 45 createwallet->
 loader:= wallet.Newloader ->
 https://github.com/Roasbeef/btcwallet/wallet/loader.go NewLoader
 
 
+##### address 
+
+```
+alice$ lncli --rpcserver=localhost:10001 --no-macaroons newaddress np2wkh
+{
+    "address": <ALICE_ADDRESS>
+}
+```
 
 
+go  to commands.go: func newAddress 98
+
+-establish connection
+funcnewAddress -> getclient: main.go 51 -> getclientconn -> func dial
+
+-take arguments and pass 
+func newaddress -> client.NewAddress-> rpcservergo: func newAddress 271 + 
+
+rpc.proto: 126"
+```
+
+    /** lncli: `newaddress`
+    NewAddress creates a new address under control of the local wallet.
+    */
+    rpc NewAddress (NewAddressRequest) returns (NewAddressResponse);
+
+    /**
+```
+"
+
+-> validateMacaroon(skip) rpcserver.go: 276 ->  r.server.cc.wakllet.NewAddress -> \lnwallet\btcwallet\btcwallet.go func newAddewss addrType waddrmgr ->
+github.com/roasbeef/btcwallet/waddrmgr -> 
+
+https://github.com/Roasbeef/btcwallet/wallet/wallet.go func NewAddress: 2095
+
+-> https://github.com/Roasbeef/btcwallet/wallet/wallet.go func newAddress :2105
+
+-> fetch address, learn diagram here for more detail.
+https://dev.visucore.com/bitcoin/doxygen/index.html
+it's a bitcore diagram.
 
 ### q2 how alice creares paymentchannel to bob
 
