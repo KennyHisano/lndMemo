@@ -60,6 +60,14 @@ alice$ lncli --rpcserver=localhost:10001 --no-macaroons newaddress np2wkh
 }
 ```
 
+Three options 
+```
+   - p2wkh:  Push to witness key hash
+   - np2wkh: Push to nested witness key hash
+   - p2pkh:  Push to public key hash (can't be used to fund channels)
+
+```
+
 
 go  to commands.go: func newAddress 98
 
@@ -88,6 +96,7 @@ https://github.com/Roasbeef/btcwallet/wallet/wallet.go func NewAddress: 2095
 
 -> https://github.com/Roasbeef/btcwallet/wallet/wallet.go func newAddress :2105
 
+->/waddrmgr/address.go 42: func addressTypeInternal
 -> fetch address, learn diagram here for more detail.
 https://dev.visucore.com/bitcoin/doxygen/index.html
 it's a bitcore diagram.
