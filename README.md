@@ -1,3 +1,13 @@
+-Lnd memo
+
+##General
+https://www.youtube.com/watch?v=wIhAmTqXhZQ
+
+ - 1 only Parent is bloadcasted. any number of child tx can be done offchain.
+ - 2 softfork allows exchange of signiture of child tx before parent if confirmed.
+
+
+
 ## intension of this read is to keep track of coding structure of lightning network based on the local setup tutorial post below.
 
 
