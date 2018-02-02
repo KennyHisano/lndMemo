@@ -4,9 +4,9 @@
 https://www.youtube.com/watch?v=wIhAmTqXhZQ
 https://fs.bitcoinmagazine.com/img/articles/understanding-the-lightning-network-part-building-a-bidirectional-payment-channel-76.jpg
 
- - 1 only Parent is bloadcasted. any number of child tx can be done offchain.
- - 2 softfork allows exchange of signiture of child tx before parent if confirmed.
-
+ - 1  only Parent is bloadcasted. any number of child tx can be done offchain.
+ - 2  softfork allows exchange of signiture of child tx before parent if confirmed.
+ - 3  RSMC is applied to the one who is broadcasting the transaction.
 
 
 ## intension of this read is to keep track of coding structure of lightning network based on the local setup tutorial post below.
