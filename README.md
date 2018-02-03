@@ -7,7 +7,7 @@ https://fs.bitcoinmagazine.com/img/articles/understanding-the-lightning-network-
  - 1  only Parent is bloadcasted. any number of child tx can be done offchain.
  - 2  softfork allows exchange of signiture of child tx before parent if confirmed.
  - 3  RSMC is applied to the one who is broadcasting the transaction.
- - 4  the ols state of transaction is invalid due to RSMC. In case Alice pay 0.1 to Bob -> Alice 0.4 and Bob 0.6, if Bob bloadcastd old tx 0.5 -> alice and 0.5 -> bob, Bob still loose all the money. 
+ - 4  the ols state of transaction is invalid due to RSMC. In case Alice pay 0.1 to Bob -> Alice 0.4 and Bob 0.6, if Bob bloadcastd old tx 0.5 -> alice and 0.5 -> bob, Bob still loose all the money if Alice unlock Alice and Bob RSMC output. 
 
 ## intension of this read is to keep track of coding structure of lightning network based on the local setup tutorial post below.
 
