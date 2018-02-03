@@ -10,6 +10,7 @@ https://fs.bitcoinmagazine.com/img/articles/understanding-the-lightning-network-
  - 4  the ols state of transaction is invalid due to RSMC. In case Alice pay 0.1 to Bob -> Alice 0.4 and Bob 0.6, if Bob bloadcastd old tx 0.5 -> alice and 0.5 -> bob, Bob still loose all the money if Alice unlock Alice and Bob RSMC output. 
 
  - 5  Basically ANY INCORRECT OPERATION in LN will result in the violation of loosing funds regardless of which is payer and payee.
+ - 6  only either party needs to broadcast.
 ## intension of this read is to keep track of coding structure of lightning network based on the local setup tutorial post below.
 
 
